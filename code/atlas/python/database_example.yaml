@@ -1,0 +1,10 @@
+version: 1
+
+databases:
+    local:
+        username: username
+        password: password
+        hostname: localhost
+        database: schemaname
+
+

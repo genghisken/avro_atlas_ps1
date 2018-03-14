@@ -1,0 +1,18 @@
+{
+	"namespace": "atlas",
+	"type": "record",
+	"name": "alert",
+	"doc": "avro alert schema",
+	"version": "0.1",
+	"fields": [
+		{"name": "alertId", "type": "long", "doc": "ATLAS alert ID. Could be database insert ID."},
+		{"name": "atlas_object_id", "type": "long", "doc": "Associated ATLAS object ID. See ZTF candid."},
+		{"name": "candidate", "type": "atlas.alert.candidate"},
+		{"name": "prv_candidates", "type": [{
+				"type": "array",
+				"items": "atlas.alert.candidate"}, "null" ], "default": null},
+		{"name": "cutoutScience", "type": ["atlas.alert.cutout", "null"], "default": null},
+		{"name": "cutoutTemplate", "type": ["atlas.alert.cutout", "null"], "default": null},
+		{"name": "cutoutDifference", "type": ["atlas.alert.cutout", "null"], "default": null}
+			]
+}
